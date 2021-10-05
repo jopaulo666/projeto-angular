@@ -1,0 +1,15 @@
+form{
+  padding: 5% 45% 10% 40%;
+}
+.padding{
+  padding: 20px;
+}
+.gray{
+  color: #999999;
+}
+.ng-valid[required], .ng-valid.required {
+  border-left: 5px solid #42A948;
+}
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+}
