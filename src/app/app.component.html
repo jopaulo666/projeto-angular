@@ -5,8 +5,15 @@
 
   <div class="form-group">
     <label for="login">Usuário</label>
-    <input type="text" class="form-control" id="login" name="login"
-      placeholder="Infome seu usuário" title="Preencha esse campo com seu e-mail" required>
+    <input
+      id="login"
+      name="login"
+      [(ngModel)]="usuario.login"
+      type="text"
+      class="form-control"
+      placeholder="Infome seu usuário"
+      title="Preencha esse campo com seu e-mail"
+      required>
     <!-- <div class="alert alert-danger">
       Usuário ou E-mail obrigatório
     </div> -->
@@ -14,14 +21,21 @@
 
   <div class="form-group">
     <label for="senha">Senha</label>
-    <input type="password" class="form-control" id="senha" name="senha"
-      placeholder="Infome sua senha" title="Preencha esse campo com sua senha" required>
+    <input
+      id="senha"
+      name="senha"
+      [(ngModel)]="usuario.senha"
+      type="password"
+      class="form-control"
+      placeholder="Infome sua senha"
+      title="Preencha esse campo com sua senha"
+      required>
     <!-- <div class="alert alert-danger">
       Senha obrigatória
     </div> -->
   </div>
 
-  <button type="button" class="btn btn-primary btn-block"  title="Entrar">
+  <button type="button" class="btn btn-primary btn-block"  title="Entrar" (click)="login()" >
     Entrar
   </button>
 
