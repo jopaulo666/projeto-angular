@@ -4,17 +4,18 @@
   </div>
 
   <div class="form-group">
-    <label for="login">Usuário</label>
+    <label for="login">Usuário ou e-mail</label>
     <input
       id="login"
       name="login"
       [(ngModel)]="usuario.login"
+      #email="ngModel"
       type="text"
       class="form-control"
       placeholder="Infome seu usuário"
-      title="Preencha esse campo com seu e-mail"
+      title="Preencha esse campo com seu e-mail ou usuário"
       required>
-    <!-- <div class="alert alert-danger">
+    <!-- <div *ngIf="email.invalid"  class="alert alert-danger">
       Usuário ou E-mail obrigatório
     </div> -->
   </div>
@@ -25,17 +26,18 @@
       id="senha"
       name="senha"
       [(ngModel)]="usuario.senha"
+      #senha="ngModel"
       type="password"
       class="form-control"
       placeholder="Infome sua senha"
       title="Preencha esse campo com sua senha"
       required>
-    <!-- <div class="alert alert-danger">
+    <!-- <div *ngIf="senha.invalid"  class="alert alert-danger">
       Senha obrigatória
     </div> -->
   </div>
 
-  <button type="button" class="btn btn-primary btn-block"  title="Entrar" (click)="login()" >
+  <button type="button" [disabled]="email.invalid || senha.invalid" class="btn btn-primary btn-block"  title="Entrar" (click)="login()" >
     Entrar
   </button>
 

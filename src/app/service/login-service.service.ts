@@ -16,8 +16,10 @@ export class LoginServiceService {
     return this.http.post(AppConstants.baseLogin, JSON.stringify(usuario)).subscribe(data => {
       var token = JSON.parse(JSON.stringify(data)).Authorization.split(' ')[1];
       localStorage.setItem("token", token);
+      console.info("Token: " + localStorage.getItem("token"));
     }, error => {
       console.error("Error ao fazer login");
+      alert('Erro ao fazer login')
     });
   }
 }
