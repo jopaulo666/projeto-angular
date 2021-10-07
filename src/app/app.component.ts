@@ -1,3 +1,4 @@
+import { LoginServiceService } from './service/login-service.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,7 +14,11 @@ export class AppComponent {
     senha: ''
   }
 
+  constructor(
+    private loginService: LoginServiceService
+    ){}
+
   login(){
-    console.log("Login: " + this.usuario.login + "Senha: " + this.usuario.senha)
+    this.loginService.login(this.usuario);
   }
 }
