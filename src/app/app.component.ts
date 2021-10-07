@@ -1,24 +1,26 @@
-import { LoginServiceService } from './service/login-service.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'projeto-angular';
 
-  usuario = {
-    login: '',
-    senha: ''
+  constructor(
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    if (localStorage.getItem('token') == null) {
+      this.router.navigate(['login']);
+    }
   }
 
-  constructor(
-    private loginService: LoginServiceService
-    ){}
-
-  login(){
-    this.loginService.login(this.usuario);
+  public sair(){
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 }
