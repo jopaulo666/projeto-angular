@@ -1,3 +1,4 @@
+import { HttpInterceptorModule } from './service/header-interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpInterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
