@@ -4,7 +4,7 @@
   <div class="form-group mx-sm-3 mb-2">
     <input type="text" class="form-control" id="nome" name="nome" placeholder="Pesquisar nome">
   </div>
-  <button type="button"  class="btn btn-primary mb-2" title="Buscar usuário">
+  <button type="button" class="btn btn-primary mb-2" title="Buscar usuário">
     Buscar
   </button>
   &nbsp;
@@ -29,12 +29,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let usuario of usuarios" >
+    <tr *ngFor="let usuario of usuarios">
       <td>{{usuario.id}}</td>
       <td>{{usuario.nome}}</td>
       <td>{{usuario.cpf}}</td>
       <td>
-        <button type="button" class="btn btn-danger" title="Excluir" >
+        <button type="button" class="btn btn-danger" (click)="delete(usuario.id)"  title="Excluir">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
             viewBox="0 0 16 16">
             <path
@@ -45,8 +45,7 @@
         </button>
       </td>
       <td>
-        <button type="button" class="btn btn-warning" title="Editar" [routerLink]=""
-          routerLink="router-link-active">
+        <button type="button" class="btn btn-warning" title="Editar" [routerLink]="" routerLink="router-link-active">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">
             <path

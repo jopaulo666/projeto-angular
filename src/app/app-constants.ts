@@ -4,5 +4,5 @@ export class AppConstants {
 
   public static get baseLogin(): string { return this.baseServidor + "api-spring-restful/login"};
 
-  public static get baseUrl(): string { return this.baseServidor + "api-spring-restful/usuario"};
+  public static get baseUrl(): string { return this.baseServidor + "api-spring-restful/usuario/"};
 }

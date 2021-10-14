@@ -1,4 +1,4 @@
-// import { HttpInterceptorModule } from './service/header-interceptor.service';
+import { HttpInterceptorModule } from './service/header-interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +23,7 @@ import { UsuarioComponent } from './componente/usuario/usuario/usuario.component
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    // HttpInterceptorModule
+    HttpInterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

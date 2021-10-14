@@ -12,11 +12,24 @@ export class UsuarioComponent implements OnInit {
 
   usuarios: Array<Usuario>;
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private usuarioService: UsuarioService) {
+    this.usuarios = []
+  }
 
   ngOnInit(): void {
+    this.list();
+  }
+
+  list() {
     this.usuarioService.list().subscribe(data => {
       this.usuarios = data
+    });
+  }
+
+  delete(id: Number) {
+    this.usuarioService.delete(id).subscribe(data => {
+      alert("Delete: " + data)
+      this.list();
     });
   }
 
