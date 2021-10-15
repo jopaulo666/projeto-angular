@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class UsuarioComponent implements OnInit {
 
   usuarios: Array<Usuario>;
+  nome: String;
 
   constructor(private usuarioService: UsuarioService) {
     this.usuarios = []
@@ -22,15 +23,25 @@ export class UsuarioComponent implements OnInit {
 
   list() {
     this.usuarioService.list().subscribe(data => {
-      this.usuarios = data
+      this.usuarios = data;
     });
   }
 
   delete(id: Number) {
     this.usuarioService.delete(id).subscribe(data => {
-      alert("Delete: " + data)
+      alert("Delete: " + data);
       this.list();
     });
   }
 
+  findByUser() {
+    this.usuarioService.findByUser(this.nome).subscribe(data => {
+      this.usuarios = data;
+    });
+  }
+
+  limpar() {
+    this.list();
+    this.nome = null;
+  }
 }

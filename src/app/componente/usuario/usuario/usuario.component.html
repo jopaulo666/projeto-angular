@@ -2,9 +2,9 @@
 <br>
 <form class="form-inline container">
   <div class="form-group mx-sm-3 mb-2">
-    <input type="text" class="form-control" id="nome" name="nome" placeholder="Pesquisar nome">
+    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" placeholder="Pesquisar nome">
   </div>
-  <button type="button" class="btn btn-primary mb-2" title="Buscar usuário">
+  <button type="button" class="btn btn-primary mb-2" (click)="findByUser()" title="Buscar usuário">
     Buscar
   </button>
   &nbsp;
@@ -13,12 +13,17 @@
     title="Cadastrar novo usuário">
     Novo
   </button>
+  &nbsp;
+  &nbsp;
+  <button type="button" class="btn btn-secondary mb-2" (click)="limpar()" title="Limpar busca">
+    Limpar
+  </button>
 </form>
 
 <br>
 <br>
 
-<table class="table table-hover container">
+<table class="table table-striped table-bordered container">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Código</th>
@@ -34,7 +39,7 @@
       <td>{{usuario.nome}}</td>
       <td>{{usuario.cpf}}</td>
       <td>
-        <button type="button" class="btn btn-danger" (click)="delete(usuario.id)"  title="Excluir">
+        <button type="button" class="btn btn-danger" (click)="delete(usuario.id)" title="Excluir">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
             viewBox="0 0 16 16">
             <path

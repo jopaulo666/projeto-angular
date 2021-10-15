@@ -15,6 +15,10 @@ export class UsuarioService {
   }
 
   delete(id: Number): Observable<any> {
-    return this.http.delete(AppConstants.baseUrl + id, {responseType: 'text'});
+    return this.http.delete(AppConstants.baseUrl + id, { responseType: 'text' });
+  }
+
+  findByUser(nome: String): Observable<any> {
+    return this.http.get(AppConstants.baseUrl + "pesquisarUsuario/" + nome);
   }
 }
