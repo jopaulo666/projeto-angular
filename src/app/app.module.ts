@@ -1,3 +1,4 @@
+import { AddUsuarioComponent } from './componente/usuario/add-usuario/add-usuario.component';
 import { HttpInterceptorModule } from './service/header-interceptor.service';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { UsuarioComponent } from './componente/usuario/usuario/usuario.component
     HomeComponent,
     LoginComponent,
     UsuarioComponent,
+    AddUsuarioComponent,
   ],
   imports: [
     BrowserModule,
