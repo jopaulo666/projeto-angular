@@ -4,27 +4,31 @@
   <div class="form-row">
     <div class="form-group col-md-1">
       <!-- <label for="id">Código</label> -->
-      <input type="hidden" class="form-control" id="id" name="id">
+      <input type="hidden" class="form-control" id="id" name="id" [(ngModel)]="usuario.id">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo">
+      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="usuario.nome"
+        placeholder="Nome completo">
     </div>
     <div class="form-group col-md-3">
       <label for="cpf">CPF</label>
-      <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Somente números">
+      <input type="text" class="form-control" id="cpf" name="cpf" [(ngModel)]="usuario.cpf"
+        placeholder="Somente números">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="login">Usuário</label>
-      <input type="text" class="form-control" id="login" name="login" placeholder="Nome de usuário">
+      <input type="text" class="form-control" id="login" name="login" [(ngModel)]="usuario.login"
+        placeholder="Nome de usuário">
     </div>
     <div class="form-group col-md-3">
       <label for="senha">Senha</label>
-      <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha">
+      <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha"
+        placeholder="Senha">
     </div>
   </div>
   <button type="button" class="btn btn-primary" title="Cadastrar">Salvar</button>

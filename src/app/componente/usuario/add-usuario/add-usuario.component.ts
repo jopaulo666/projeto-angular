@@ -1,4 +1,7 @@
+import { UsuarioService } from './../../../service/usuario.service';
+import { Usuario } from './../../../model/Usuario';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-usuario',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddUsuarioComponent implements OnInit {
 
-  constructor() { }
+  usuario = new Usuario();
+
+  constructor(
+    private routeActive: ActivatedRoute,
+    private usuarioService: UsuarioService
+  ) { }
 
   ngOnInit(): void {
+    let id = this.routeActive.snapshot.paramMap.get('id');
+
+    if (id != null) {
+      this.usuarioService.findById(id).subscribe(data => {
+        this.usuario = data;
+      })
+    }
   }
 
 }

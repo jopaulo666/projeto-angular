@@ -1,5 +1,8 @@
 <br>
 <br>
+<h1>Lista de usuários</h1>
+<br>
+<br>
 <form class="form-inline container">
   <div class="form-group mx-sm-3 mb-2">
     <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="nome" placeholder="Pesquisar nome">
@@ -50,7 +53,7 @@
         </button>
       </td>
       <td style="text-align: center;">
-        <button type="button" class="btn btn-warning" title="Editar" [routerLink]="['/addUsuario', usuario.id]" routerLink="router-link-active">
+        <button type="button" class="btn btn-warning" title="Editar" [routerLink]="['/add-usuario', usuario.id]" routerLink="router-link-active">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">
             <path
