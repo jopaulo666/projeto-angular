@@ -1,6 +1,6 @@
 <br>
 <h1>Cadastro de usuário</h1>
-<form class="col-lg-12 offset-lg-3">
+<form class="col-lg-12 offset-lg-3" #formValidate="ngForm">
   <div class="form-row">
     <div class="form-group col-md-1">
       <!-- <label for="id">Código</label> -->
@@ -11,29 +11,33 @@
     <div class="form-group col-md-3">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="usuario.nome"
-        placeholder="Nome completo">
+        placeholder="Nome completo" required>
     </div>
     <div class="form-group col-md-3">
       <label for="cpf">CPF</label>
       <input type="text" class="form-control" id="cpf" name="cpf" [(ngModel)]="usuario.cpf"
-        placeholder="Somente números">
+        placeholder="Somente números" required>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="login">Usuário</label>
       <input type="text" class="form-control" id="login" name="login" [(ngModel)]="usuario.login"
-        placeholder="Nome de usuário">
+        placeholder="Nome de usuário" required>
     </div>
     <div class="form-group col-md-3">
       <label for="senha">Senha</label>
       <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha"
-        placeholder="Senha">
+        placeholder="Senha" required>
     </div>
   </div>
-  <button type="button" class="btn btn-primary" (click)="salvar()"  title="Cadastrar">Salvar</button>
+  <button type="button" class="btn btn-primary" [disabled]="formValidate.invalid" (click)="salvar()" title="Salvar">
+    Salvar
+  </button>
   &nbsp;
-  <button type="button" class="btn btn-secondary" (click)="novo()" title="Limpar">Limpar</button>
+  <button type="button" class="btn btn-secondary" (click)="novo()" title="Limpar">
+    Limpar
+  </button>
   &nbsp;
   <button type="button" class="btn btn-link" title="Voltar" [routerLink]="['/usuario']"
     routerLink="router-link-active">Voltar</button>
