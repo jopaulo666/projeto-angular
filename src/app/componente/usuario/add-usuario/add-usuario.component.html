@@ -31,9 +31,9 @@
         placeholder="Senha">
     </div>
   </div>
-  <button type="button" class="btn btn-primary" title="Cadastrar">Salvar</button>
+  <button type="button" class="btn btn-primary" (click)="salvar()"  title="Cadastrar">Salvar</button>
   &nbsp;
-  <button type="button" class="btn btn-secondary" title="Limpar">Limpar</button>
+  <button type="button" class="btn btn-secondary" (click)="novo()" title="Limpar">Limpar</button>
   &nbsp;
   <button type="button" class="btn btn-link" title="Voltar" [routerLink]="['/usuario']"
     routerLink="router-link-active">Voltar</button>

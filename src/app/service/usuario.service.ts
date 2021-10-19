@@ -14,7 +14,7 @@ export class UsuarioService {
     return this.http.get<any>(AppConstants.baseUrl);
   }
 
-  findById(id): Observable<any>{
+  findById(id): Observable<any> {
     return this.http.get<any>(AppConstants.baseUrl + id)
   }
 
@@ -24,5 +24,13 @@ export class UsuarioService {
 
   findByUser(nome: String): Observable<any> {
     return this.http.get(AppConstants.baseUrl + "pesquisarUsuario/" + nome);
+  }
+
+  save(usuario): Observable<any> {
+    return this.http.post<any>(AppConstants.baseUrl, usuario);
+  }
+
+  update(usuario): Observable<any> {
+    return this.http.put<any>(AppConstants.baseUrl, usuario);
   }
 }
