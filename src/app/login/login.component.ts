@@ -1,5 +1,6 @@
 import { LoginServiceService } from './../service/login-service.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,10 +15,14 @@ export class LoginComponent implements OnInit {
   }
 
   constructor(
-    private loginService: LoginServiceService
+    private loginService: LoginServiceService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('token') !== null && localStorage.getItem('token').trim() !== null) {
+      this.router.navigate(['home']);
+    }
   }
 
   login(){
