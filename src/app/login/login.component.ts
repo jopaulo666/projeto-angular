@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.validaToken();
+  }
+
+  validaToken(){
     if (localStorage.getItem('token') !== null && localStorage.getItem('token').trim() !== null) {
       this.router.navigate(['home']);
     }
