@@ -28,7 +28,7 @@ export class AddUsuarioComponent implements OnInit {
   }
 
   salvar() {
-    if (this.usuario.id !== null && this.usuario.id.toString().trim() !== null) {
+    if (this.usuario.id != null && this.usuario.id.toString().trim() != null) {
       this.usuarioService.update(this.usuario).subscribe(data => {
         this.novo();
         console.info("Usuário editado " + data);

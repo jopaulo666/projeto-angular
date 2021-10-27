@@ -28,10 +28,13 @@ export class UsuarioComponent implements OnInit {
   }
 
   delete(id: Number) {
-    this.usuarioService.delete(id).subscribe(data => {
-      alert("Delete: " + data);
-      this.list();
-    });
+    if (confirm('Deseja realmente excluir o usuário?')) {
+      this.usuarioService.delete(id).subscribe(data => {
+        alert("Delete: " + data);
+        this.list();
+      });
+    }
+    
   }
 
   findByUser() {
