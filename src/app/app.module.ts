@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { UsuarioComponent } from './componente/usuario/usuario/usuario.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UsuarioComponent } from './componente/usuario/usuario/usuario.component
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpInterceptorModule
+    HttpInterceptorModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

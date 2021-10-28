@@ -1,7 +1,10 @@
+import { Telefone } from './telefone';
 export class Usuario {
   id: Number;
-  login: String;
-  senha: String;
-  nome: String;
-  cpf: String;
+  login: string;
+  senha: string;
+  nome: string;
+  cpf: string;
+  fone: string;
+  //telefones: Array<Telefone>
 }

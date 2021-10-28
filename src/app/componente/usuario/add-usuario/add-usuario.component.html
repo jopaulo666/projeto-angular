@@ -10,25 +10,66 @@
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="nome">Nome</label>
-      <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="usuario.nome"
-        placeholder="Nome completo" required>
+      <input 
+        style="text-transform: capitalize;"
+        type="text" 
+        class="form-control"
+        id="nome" 
+        name="nome" 
+        [(ngModel)]="usuario.nome"
+        placeholder="Nome completo" 
+        maxlength="50"
+        required>
     </div>
     <div class="form-group col-md-3">
       <label for="cpf">CPF</label>
-      <input type="text" class="form-control" id="cpf" name="cpf" [(ngModel)]="usuario.cpf"
-        placeholder="Somente números" required>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="cpf" 
+        name="cpf" 
+        [(ngModel)]="usuario.cpf"
+        placeholder="000.000.000.00"
+        mask="000.000.000.00"
+        required>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="login">Usuário</label>
-      <input type="text" class="form-control" id="login" name="login" [(ngModel)]="usuario.login"
-        placeholder="Nome de usuário" required>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="login" 
+        name="login" 
+        [(ngModel)]="usuario.login"
+        placeholder="Nome de usuário" 
+        required>
     </div>
     <div class="form-group col-md-3">
       <label for="senha">Senha</label>
-      <input type="password" class="form-control" id="senha" name="senha" [(ngModel)]="usuario.senha"
-        placeholder="Senha" required>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="senha" 
+        name="senha" 
+        [(ngModel)]="usuario.senha"
+        placeholder="Senha" 
+        required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="login">Telefone</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="telefone" 
+        name="telefone" 
+        [(ngModel)]="usuario.fone"
+        placeholder="(00) 00000-0000" 
+        mask="(00) 00000-0000"
+        required>
     </div>
   </div>
   <button type="button" class="btn btn-primary" [disabled]="formValidate.invalid" (click)="salvar()" title="Salvar">
